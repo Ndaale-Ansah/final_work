@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="">
 
-  <title> Feane </title>
+  <title> Graclyn </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -42,9 +42,9 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
-              Feane
+              Gracyln
             </span>
           </a>
 
@@ -55,20 +55,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
+                <a class="nav-link" href="menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="about.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="book.html">Book Table</a>
+                <a class="nav-link" href="book.php">Events</a>
               </li>
             </ul>
             <div class="user_option">
-              <a href="" class="user_link">
+              <a href="./login/register.php" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
               <a class="cart_link" href="#">
@@ -130,7 +130,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
+              <a href="./menu.php" class="order_online">
                 Order Online
               </a>
             </div>
@@ -302,10 +302,10 @@
               </div>
               <div class="detail-box">
                 <h5>
-                  Pizza Days
+                  Local Sunday
                 </h5>
                 <h6>
-                  <span>15%</span> Off
+                  <span>15% off local food orders</span> Off
                 </h6>
                 <a href="">
                   Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -383,10 +383,10 @@
 
       <ul class="filters_menu">
         <li class="active" data-filter="*">All</li>
-        <li data-filter=".burger">Burger</li>
-        <li data-filter=".pizza">Pizza</li>
-        <li data-filter=".pasta">Pasta</li>
-        <li data-filter=".fries">Fries</li>
+        <li data-filter=".burger">Locals</li>
+        <li data-filter=".pizza">Continentals</li>
+        <li data-filter=".pasta">Bakery</li>
+        <li data-filter=".fries">Deserts</li>
       </ul>
 
       <div class="filters-content">
@@ -1078,7 +1078,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="">
+        <a href="./menu.php">
           View More
         </a>
       </div>
@@ -1102,7 +1102,7 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                We Are Feane
+                We Are Gracyln Services
               </h2>
             </div>
             <p>
@@ -1271,7 +1271,7 @@
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-              Feane
+             Gracyln
             </a>
             <p>
               Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with

@@ -1,4 +1,4 @@
-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,11 +59,12 @@ CREATE TABLE `categories` (
 CREATE TABLE `customer` (
   `customer_id` int(11) NOT NULL,
   `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL
-  `email` varchar(50) NOT NULL,
-  `password` varchar(150) NOT NULL,
-  `customer_contact` varchar(15) NOT NULL,
-  `user_role` int(11) NOT NULL
+  `last_name` varchar(100) NOT NULL,
+  `customer_email` varchar(50) NOT NULL,
+  `contact` varchar(10) NOT NULL,
+  `password` varchar (100) NOT NULL,
+  `user_role` int (11) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
