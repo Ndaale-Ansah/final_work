@@ -5,6 +5,8 @@
   <title> Login </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="../css/style_login.css">
+<script src="../js/jQuery3.6.js"></script>
+<script src="../js/login_validation.js"></script>
 
 </head>
 <body>
@@ -16,9 +18,9 @@
       <i class="fa fa-lock fa-stack-1x"></i>
     </span>
   </p>
-  <input type="email" class="login-username" autofocus="true" required="true" placeholder="Email"  name="customer_email"/>
-  <input type="password" class="login-password" required="true" placeholder="Password"  name="password"/>
-  <input type="submit" name="login" value="Login" class="login-submit" />
+  <input type="email" class="login-username" id="login-email" autofocus="true" placeholder="Email"  />
+  <input type="password" class="login-password" id="login-pwd" placeholder="Password" />
+  <button type="button" id="login-button" class="login-submit" >Login</button>
 </form>
 <a href="./register.php" class="login-forgot-pass">Don't have an account?</a>
 <div class="underlay-photo"></div>
