@@ -153,10 +153,10 @@
 
       <ul class="filters_menu">
         <li class="active" data-filter="*">All</li>
-        <li data-filter=".burger">Burger</li>
-        <li data-filter=".pizza">Pizza</li>
-        <li data-filter=".pasta">Pasta</li>
-        <li data-filter=".fries">Fries</li>
+        <li data-filter=".burger">Local</li>
+        <li data-filter=".pizza">Continental</li>
+        <li data-filter=".pasta">Bakery</li>
+        <li data-filter=".fries">Dessert</li>
       </ul>
 
       <div class="filters-content">
@@ -956,8 +956,8 @@
   <!-- custom js -->
   <script src="js/custom.js"></script>
   <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"> -->
+  <!-- </script> -->
   <!-- End Google Map -->
 
 </body>
