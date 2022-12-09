@@ -153,10 +153,10 @@
 
       <ul class="filters_menu">
         <li class="active" data-filter="*">All</li>
-        <li data-filter=".burger">Local</li>
-        <li data-filter=".pizza">Continental</li>
-        <li data-filter=".pasta">Bakery</li>
-        <li data-filter=".fries">Dessert</li>
+        <li data-filter=".burger">Burger</li>
+        <li data-filter=".pizza">Pizza</li>
+        <li data-filter=".pasta">Pasta</li>
+        <li data-filter=".fries">Fries</li>
       </ul>
 
       <div class="filters-content">
@@ -169,14 +169,14 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    Seasonal Pizza
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                    Seasional vegies//pepperoni//pork or chicken
                   </p>
                   <div class="options">
                     <h6>
-                      $20
+                      GHS 20
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -245,10 +245,10 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Burger
+                    Special Burger
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                  A flame-grilled plant-based patty with juicy tomatoes//crisp lettuce//creamy mayonnaise//ketchup//crunchy pickles//sliced white onions on a toasted sesame seed bun. 
                   </p>
                   <div class="options">
                     <h6>
@@ -321,10 +321,10 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    BBQ Lover
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                    Pizza toppings with BBQ chicken 
                   </p>
                   <div class="options">
                     <h6>
@@ -397,10 +397,11 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pasta
+                  Pappardelle con ragu
+
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                  Homemade pappardelle//minced beef sauce.
                   </p>
                   <div class="options">
                     <h6>
@@ -473,14 +474,14 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    French Fries
+                    Fries 
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                    Crispy deep-fried chips//quarter pound charcoal grilled chicken//special dip sauce
                   </p>
                   <div class="options">
                     <h6>
-                      $10
+                      GHS 100
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -549,11 +550,10 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    Meat Galore Pizza
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    All kinds of meat// vegies of your choice
                   <div class="options">
                     <h6>
                       $15
@@ -625,14 +625,13 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Tasty Burger
+                    Double Whopper Burger
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                  Two ¼ lb.// flame-grilled beef patties with juicy tomatoes//crisp lettuce//creamy mayonnaise//ketchup//crunchy pickles//and sliced white onions on a toasted sesame seed bun                  </p>
                   <div class="options">
                     <h6>
-                      $12
+                      GHS 75
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -701,14 +700,14 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Tasty Burger
+                    Bacon King
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                  flame-grilled beef patties with crispy bacon//melted American cheese//ketchup//creamy mayonnaise on a toasted sesame seed bun.
                   </p>
                   <div class="options">
                     <h6>
-                      $14
+                      GHS 1
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -777,14 +776,15 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pasta
+                    Gracyln's special 
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                  Baked homemade//pasta layered with minced beef//tomatoes sauce//bechamel//mozzarella cheese.
+
                   </p>
                   <div class="options">
                     <h6>
-                      $10
+                      GHS 61
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">

@@ -192,13 +192,13 @@
             </form>
           </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <div class="map_container ">
             <div id="googleMap"></div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
   <!-- end book section -->
 
@@ -212,22 +212,22 @@
               Contact Us
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <!-- <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
-                </span>
+                </span> -->
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call 0202525920
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  gracyln@gmail.com
                 </span>
               </a>
             </div>
@@ -238,9 +238,9 @@
             <a href="" class="footer-logo">
               Gracyln
             </a>
-            <p>
+            <!-- <p>
               Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
-            </p>
+            </p> -->
             <div class="footer_social">
               <a href="">
                 <i class="fa fa-facebook" aria-hidden="true"></i>

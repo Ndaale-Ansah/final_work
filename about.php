@@ -130,7 +130,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
+              <a href="./menu.php" class="order_online">
                 Order Online
               </a>
             </div>
@@ -160,13 +160,11 @@
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+            Gracyln kitchen is a locally and family-owned business that was founded in 2020. We are dedicated to bringing you wonderful meals from around the world. Gracyln's development has been enlivened with the energy to cook and serve solid, local and continental takeout food.
+Our menu highlights things that utilise sound and fragrant flavours. 
             </p>
-            <a href="">
-              Read More
+            <!-- <a href="">
+              Read More -->
             </a>
           </div>
         </div>
@@ -185,23 +183,23 @@
             <h4>
               Contact Us
             </h4>
-            <div class="contact_link_box">
+            <!-- <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
-                </span>
+                </span> -->
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call 0202525920
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  gracyln@gmail.com
                 </span>
               </a>
             </div>
@@ -212,9 +210,9 @@
             <a href="" class="footer-logo">
               Gracyln
             </a>
-            <p>
+            <!-- <p>
               Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
-            </p>
+            </p> -->
             <div class="footer_social">
               <a href="">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
