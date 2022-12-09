@@ -70,15 +70,15 @@ function send_data(url, method, data_object, success_function){
 }
 
 function login_validation(data){
-    console.log(data);
-    if(data=="0"){
+    if(data==0){
+        console.log(data);
         document.location.href = '../index.php';
     }
-    else if(data =="1"){
+    else if(data ==1){
         // implement dialog box for incorrec password
         console.log("password incorrect");
     }
-    else if(data =="2"){
+    else if(data ==2){
         // implement dialog box for failed login
         console.log("login failed");
     }
