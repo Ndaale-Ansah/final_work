@@ -33,7 +33,8 @@ $(document).ready(function(){
         }
     });
 
-    $("#login-button").click(function(e){
+    $("#register-button").click(function(e){
+
         var f_name = $("#first_name").val().trim();
         var l_name = $("#last_name").val().trim();
         var email = $("#email").val().trim();
@@ -44,8 +45,15 @@ $(document).ready(function(){
         if(validateInput(f_name) && validateInput(l_name) && 
         validateRegex(email, email_regex) && validateRegex(contact, phone_regex) &&
         validateRegex(pwd, password_regex) && pwd == conf_pwd){
-            console.log("Sending data");
-            send_data(f_name, l_name, email, contact, pwd, conf_pwd);
+            var data = {
+                register: true,
+                first_name: f_name, 
+                last_name: l_name,
+                customer_email: email,
+                contact: contact,
+                password: pwd
+            }
+            send_data("../login/register_process.php", "POST", data, registration_validation);
         }
     });
 
@@ -69,42 +77,45 @@ function validateRegex(input, regex){
 
 function onInput(input){
     if(validateInput($(input).val())){
-        $(input).css('border-bottom', '1px solid green');
+        $(input).css('border-bottom', '2px solid green');
         return;
     }else {
-        $(input).css('border-bottom', '1px solid red');
+        $(input).css('border-bottom', '2px solid red');
     }
 }
 
 function onRegexInput(input, regex){
     if(validateRegex($(input).val(), regex)){
-        $(input).css('border-bottom', '1px solid green');
+        $(input).css('border-bottom', '2px solid green');
         return;
     }else {
-        $(input).css('border-bottom', '1px solid red');
+        $(input).css('border-bottom', '2px solid red');
     }
 }
 
-function send_data(f_name, l_name, email, contact, password){
+function send_data(url, method, data_object, success_function){
     $.ajax({
-        url: "../login/register_process.php",
-        method: "POST",
-        data: { 
-            register: true,
-            first_name: f_name,
-            last_name: l_name,
-            customer_email: email,
-            contact: contact,
-            password: password
-        },
+        url: url,
+        method: method,
+        data: data_object,
         success: function(data){
-            console.log(data);
-            if(data=="0"){
-                
-                //window.location.href = '../login/login.php';
-            }
+            success_function(data);
         }
     }); 
 
 }
 
+function registration_validation(data){
+    console.log(data);
+    if(data=="0"){
+        window.location.href = '../login/login.php';
+    }
+    else if(data =="1"){
+        // implement dialog box for insertion failure
+        console.log("registration failed");
+    }
+    else if(data =="2"){
+        // implement dialog box for email duplicate in DB
+        console.log("Email duplication");
+    }
+}

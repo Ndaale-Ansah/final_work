@@ -26,7 +26,7 @@
   <input type="text" class="login-username" autofocus="true" id="contact" placeholder="Phone Number" />
   <input type="password" class="login-password" id="pwd" placeholder="Password" />
   <input type="password" class="login-password" id="conf_pwd" placeholder="Confirm Password" />
-  <button type="button" id="login-button" class="login-submit" >Register</button>
+  <button type="button" id="register-button" class="login-submit" >Register</button>
 </form>
 <a href="./login.php" class="login-forgot-pass">Already have an account</a>
 <div class="underlay-photo"></div>

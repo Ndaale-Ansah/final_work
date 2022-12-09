@@ -3,9 +3,6 @@
 include_once(dirname(__FILE__)).'/../controllers/customer_controller.php';
 
 
-//initializing variable
-$errors = array(); 
- 
 //check if register button was clicked 
 if (isset($_POST['register'])) {
 	
