@@ -73,7 +73,9 @@ function send_data(url, method, data_object, success_function){
 function login_validation(data){
     console.log(data);
     if(data['response']==0){
-        if(data['user_role']==0) document.location.href = '../index.php';
+        if(data['user_role']==1) document.location.href = '../Admin/index.php';
+        else document.location.href = '../index.php';
+        
     }
     else if(data['response'] ==1){
         // implement dialog box for incorrec password
