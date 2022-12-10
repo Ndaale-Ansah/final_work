@@ -1,6 +1,6 @@
 <?php
 //connect to the add brand process file
-include("../actions/add_category.php");
+include("../actions/add_product.php");
 ?>
 
 <!DOCTYPE html>

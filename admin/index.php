@@ -58,7 +58,7 @@
                 <a class="nav-link" href="./category.php">Add Category <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./view/product.php">Add food</a>
+                <a class="nav-link" href="../view/product.php">Add food</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./view_orders.php">Orders</a>
