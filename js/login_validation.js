@@ -64,21 +64,22 @@ function send_data(url, method, data_object, success_function){
         data: data_object,
         success: function(data){
             success_function(data);
-        }
+        },
+        dataType:"json",
     }); 
 
 }
 
 function login_validation(data){
-    if(data==0){
-        console.log(data);
-        document.location.href = '../index.php';
+    console.log(data);
+    if(data['response']==0){
+        if(data['user_role']==0) document.location.href = '../index.php';
     }
-    else if(data ==1){
+    else if(data['response'] ==1){
         // implement dialog box for incorrec password
         console.log("password incorrect");
     }
-    else if(data ==2){
+    else if(data['response'] ==2){
         // implement dialog box for failed login
         console.log("login failed");
     }
