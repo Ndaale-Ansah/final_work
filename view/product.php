@@ -11,7 +11,7 @@ include("../actions/add_product.php");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="../css/style_login.css">
 <script src="../js/jQuery3.6.js"></script>
-<script src="../js/add_category.js"></script>
+<script src="../js/add_product.js"></script>
 
 
 </head>
@@ -24,13 +24,13 @@ include("../actions/add_product.php");
     // }
     ?> -->
 <!-- partial:index.partial.html -->
-<form class="login-form">
+<form class="login-form" enctype="multipart/form-data">
   <p class="login-text">
     
   </p>
   <input type="text" class="login-username" id="food_name" autofocus="true" placeholder="Food Name" />
-  <input type="text" class="login-username" id="food_price" autofocus="true" placeholder="Food Price(GHS)" />
-  <select class="form-control my-2 p-2" id="exampleFormControlSelect1" name="pcat" required="required">
+  <input type="number" class="login-username" id="food_price" autofocus="true" placeholder="Food Price(GHS)" />
+  <select class="login-username" id="category" name="pcat" required="required">
 		<option value="" selected disabled hidden>Select Product Category</option>
             <?php
             foreach($categories as $category){
@@ -40,10 +40,10 @@ include("../actions/add_product.php");
             }
         ?>
 	</select>
-  <input type="text" class="login-username" id="food_description" autofocus="true" placeholder="Food Description" />
-  <input type="file" class="form-control-file my-1 p-2" required="required" name="pimg" id="pimg">
-  <button type="button" id="add_cat-button" class="login-submit"> Add food</button>
-  <button type="button" id="view_cat-button" class="login-submit" name="view_category_btn"> view Food list</button>
+  <textarea rows="4" cols="50" class="login-username" id="food_desc" autofocus="true" placeholder="Food Description"></textarea>
+  <input type="file" id="image" class="login-username" required="required" accept="image/jpeg, image/png, image/jpg">
+  <button type="button" id="add_prod-button" class="login-submit"> Add food</button>
+  <button type="button" id="view_prod-button" class="login-submit" > view Food list</button>
 
 </form>
 <a href="../admin/index.php" class="login-forgot-pass">Click to go to home page</a>
