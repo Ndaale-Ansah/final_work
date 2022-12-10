@@ -70,6 +70,19 @@ CREATE TABLE `customer` (
 
 -- --------------------------------------------------------
 
+-
+-- Table structure for table `archived`
+--
+
+CREATE TABLE `archived` (
+  `product_id` int(11) NOT NULL,
+  `product_cat` int(11) NOT NULL,
+  `product_title` varchar(200) NOT NULL,
+  `product_price` double NOT NULL,
+  `product_desc` varchar(500) NOT NULL,
+  `product_image` varchar(100) NOT NULL,
+  `stock` int(11) NOT NULL
+);
 --
 -- Table structure for table `orderdetails`
 --
