@@ -25,10 +25,7 @@ include("../actions/add_category.php");
 <!-- partial:index.partial.html -->
 <form class="login-form">
   <p class="login-text">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-lock fa-stack-1x"></i>
-    </span>
+    
   </p>
   <input type="text" class="login-username" id="add_category" autofocus="true" placeholder="Add_category" name="add_category"  />
   <button type="button" id="login-button" class="login-submit" name="addcatbtn"> Add Category</button>
