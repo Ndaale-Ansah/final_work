@@ -11,7 +11,8 @@ include("../actions/add_category.php");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="../css/style_login.css">
 <script src="../js/jQuery3.6.js"></script>
-<script src="../js/login_validation.js"></script>
+<script src="../js/add_category.js"></script>
+
 
 </head>
 <body>
@@ -27,9 +28,9 @@ include("../actions/add_category.php");
   <p class="login-text">
     
   </p>
-  <input type="text" class="login-username" id="add_category" autofocus="true" placeholder="Add_category" name="add_category"  />
-  <button type="button" id="login-button" class="login-submit" name="addcatbtn"> Add Category</button>
-  <button type="button" id="login-button" class="login-submit" name="view_category_btn"> view Category list</button>
+  <input type="text" class="login-username" id="add_category" autofocus="true" placeholder="Add Category" />
+  <button type="button" id="add_cat-button" class="login-submit"> Add Category</button>
+  <button type="button" id="view_cat-button" class="login-submit" name="view_category_btn"> view Category list</button>
 
 </form>
 <a href="../admin/index.php" class="login-forgot-pass">Click to go to home page</a>
