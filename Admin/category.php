@@ -16,13 +16,13 @@ include("../actions/add_category.php");
 
 </head>
 <body>
-<!-- <?php
+<?php
 //redirect if user is not an admin
-    // session_start();
-    // if($_SESSION['user_role'] !=1){
-    //     header('location: ../login/login.php');
-    // }
-    ?> -->
+    session_start();
+    if($_SESSION['user_role'] !=1){
+        header('location: ../login/login.php');
+    }
+    ?>
 <!-- partial:index.partial.html -->
 <form class="login-form">
   <p class="login-text">
