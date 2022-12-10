@@ -157,10 +157,17 @@
         <li data-filter=".pizza">Pizza</li>
         <li data-filter=".pasta">Pasta</li>
         <li data-filter=".fries">Fries</li>
+        <li data-filter=".waakye">Waakye</li>
       </ul>
 
       <div class="filters-content">
         <div class="row grid">
+          <?php
+          include_once './cart/menu_card.php';
+
+          $menu_item = new Card_item("Seasonal Pizza", 20, "Seasional vegies//pepperoni//pork or chicken", "images/f1.png", "waakye");
+          $menu_item->display();
+          ?>
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">
               <div>
