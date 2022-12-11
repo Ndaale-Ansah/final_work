@@ -6,9 +6,9 @@ include_once(dirname(__FILE__)).'/../settings/db_class.php';
 class product_class extends Connection{
 
     //method to add product to the database
-	function add_product($prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img, $prod_stock){
-		return $this->query("insert into products(product_cat, product_title, product_price, product_desc, product_image, stock) 
-		values('$prod_cat', '$prod_title', '$prod_price', '$prod_desc', '$prod_img', '$prod_stock')");
+	function add_product($prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img){
+		return $this->query("insert into products(product_cat, product_title, product_price, product_desc, product_image) 
+		values('$prod_cat', '$prod_title', '$prod_price', '{$prod_desc}', '$prod_img')");
 	}
 
 	//method to delete a product from the database
@@ -101,12 +101,13 @@ class product_class extends Connection{
     }
 
 	//method to display all products
-	function display_products($start, $limit){
-    	return $this->fetch("SELECT categories.cat_name, products.product_id,
-        products.product_title, products.product_price, products.product_desc, products.product_image
+	function display_products(){
+    	return $this->fetch("SELECT categories.cat_name as cat_name, products.product_id as prod_id,
+        products.product_title as prod_name, products.product_price as prod_price,
+		products.product_desc as prod_desc, products.product_image as prod_img_src
         FROM `products`
         JOIN categories ON (products.product_cat = categories.cat_id)
-        LIMIT $start, $limit");
+    ");
     }
 	
 	//method to count the products in the database for pagination

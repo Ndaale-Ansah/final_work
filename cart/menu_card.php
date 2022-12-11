@@ -1,5 +1,6 @@
 <?php 
 class Card_item {
+    public $product_id;
     public $item_name;
     public $item_price;
     public $item_desc;
@@ -7,7 +8,8 @@ class Card_item {
     public $item_category;
 
 
-    function __construct($name, $price, $desc,$img_src, $cat) {
+    function __construct($p_id, $name, $price, $desc,$img_src, $cat) {
+        $this->product_id = $p_id;
         $this->item_name = $name;
         $this->item_price = $price;
         $this->item_desc = $desc;
