@@ -1,12 +1,13 @@
 <?php
 //connect to the product controller
-require("../controllers/product_controller.php");
+require_once"../controllers/product_controller.php";
 
 // check if button was clicked
 if(isset($_POST['addcatbtn'])){
 
     //grab form data
-    $categoryName = $_POST['cat_name'];
+
+    $categoryName = str_replace("'", "\'", $_POST['cat_name']);
     
     $addcategory = add_category_function($categoryName);
         

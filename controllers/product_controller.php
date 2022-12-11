@@ -5,11 +5,11 @@ include_once(dirname(__FILE__)).'/../classes/product_class.php';
 //products
 
 //add new product function 
-function add_product_function($prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img, $prod_stock){
+function add_product_function($prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img){
     // create an instance of the product class
     $product_instance = new product_class();
     // call the method from the class
-    return $product_instance->add_product($prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img, $prod_stock);
+    return $product_instance->add_product($prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img);
 }
 
 //edit a product function   
@@ -125,11 +125,11 @@ function view_archived_controller(){
 }
 
 
-function display_products_controller($start, $limit){
+function display_products_controller(){
      // create an instance of the product class
      $category_instance = new product_class();
      // call the method from the class
-     return $category_instance->display_products($start, $limit);
+     return $category_instance->display_products();
 }
 
 function product_row_counts_controller(){

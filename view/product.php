@@ -1,7 +1,7 @@
 <?php
 //connect to the add brand process file
-include("../actions/add_product.php");
-include("../actions/add_category.php")
+include_once("../actions/add_category.php");
+include_once("../actions/add_product.php");
 ?>
 
 <!DOCTYPE html>
@@ -25,13 +25,13 @@ include("../actions/add_category.php")
     // }
     ?> -->
 <!-- partial:index.partial.html -->
-<form class="login-form" enctype="multipart/form-data">
+<form method="POST" id="form-data" action="../actions/add_product.php"- class="login-form" enctype="multipart/form-data">
   <p class="login-text">
     
   </p>
-  <input type="text" class="login-username" id="food_name" autofocus="true" placeholder="Food Name" />
-  <input type="number" class="login-username" id="food_price" autofocus="true" placeholder="Food Price(GHS)" />
-  <select class="login-username" id="category" name="pcat" required="required">
+  <input type="text" class="login-username" name="prod_name" id="food_name" autofocus="true" placeholder="Food Name" />
+  <input type="number" class="login-username" name="prod_price" id="food_price" autofocus="true" placeholder="Food Price(GHS)" />
+  <select class="login-username" id="category" name="prod_cat" required="required">
 		<option value="" selected disabled hidden>Select Product Category</option>
             <?php
             foreach($categories as $category){
@@ -41,9 +41,9 @@ include("../actions/add_category.php")
             }
         ?>
 	</select>
-  <textarea rows="4" cols="50" class="login-username" id="food_desc" autofocus="true" placeholder="Food Description"></textarea>
-  <input type="file" id="image" class="login-username" required="required" accept="image/jpeg, image/png, image/jpg">
-  <button type="button" id="add_prod-button" class="login-submit"> Add food</button>
+  <textarea rows="4" cols="50" class="login-username" name="prod_desc" id="food_desc" autofocus="true" placeholder="Food Description"></textarea>
+  <input type="file" name="prod_img_src" id="image" class="login-username" required="required" accept="image/jpeg, image/png, image/jpg">
+  <button type="submit" id="add_prod-button" name="add_prods" class="login-submit"> Add food</button>
   <button type="button" id="view_prod-button" class="login-submit" > view Food list</button>
 
 </form>

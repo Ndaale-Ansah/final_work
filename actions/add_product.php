@@ -1,101 +1,36 @@
 <?php
 //connect to the product controller
 include_once (dirname(__FILE__)).'/../controllers/product_controller.php';
+include_once (dirname(__FILE__)).'/../actions/image_processing.php';
 
-//initializing variable
-$errors = array();
+
 
 //check if add product button is clicked
-if (isset($_POST['addprodbtn'])){
+if (isset($_POST['add_prods'])){
     
     //grab form details
-    $pname = $_POST['pname'];
-    $pprice = $_POST['pprice'];
-    $pcat = $_POST['pcat'];
-    $pdesc = $_POST['pdesc']; 
-    $stock = $_POST['pstock']; 
 
-    //validate form
-    //product name
-    if (empty($pname)){
-        array_push($errors, "Product Name is required");
-    }
-    
-    if (strlen($pname) > 200){
-        array_push($errors, "Product Name is too long");
-    }
-    
-    //product price
-    if (empty($pprice)){
-        array_push($errors, "Product Price is required");
-    }
+    $pname = str_replace("'", "\'", $_POST['prod_name']);
+    $pprice = str_replace("'", "\'", $_POST['prod_price']);
+    $pcat = str_replace("'","\'", $_POST['prod_cat']);
+    $pdesc = str_replace("'","\'", $_POST['prod_desc']); 
+    var_dump($_FILES['prod_img_src']);
+    $image_src = uploadImage($_FILES['prod_img_src']);
+    echo $image_src;
+    //When image has been uploaded
+    if ($image_src == null|| $image_src === 0 || $image_src === 1){
+       echo "2";
 
-    //product category
-    if (empty($pcat)){
-        array_push($errors, "Product Category is required");
-    }
-    
-    //product description
-    if (strlen($pdesc) > 500){
-        array_push($errors, "Product Description is too long");
-    }
-     
-    //product image
-    $target_folder = "../Images/Product/";
-    $target_file = $target_folder . basename($_FILES["pimg"]["name"]);
-    $ImageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    //Check if image has been uploaded
-    if (empty($_FILES["pimg"]["name"])){
-        array_push($errors, "Product Image is required");
-    }else{
-    	//Check if the file input is really an image
-    	$check = getimagesize($_FILES["pimg"]["tmp_name"]);
-    if ($check == false){
-    	array_push($errors, "File is not an image");
-    }
-
-    //limit the file size
-    if ($_FILES["pimg"]["size"] > 5000000){
-    	array_push($errors, "File is too large");
-    }
-
-    //limit file type
-    if ($ImageFileType != "jpg" && $ImageFileType != "png" && $ImageFileType != "jpeg" && $ImageFileType != "gif"){
-        array_push($errors, "Sorry, only JPG, JPEG, PNG & GIF files are allowed.");
-    }
-    }
-
-
-    //if form is fine
-    if (count($errors) == 0){
-        $uploadImage = move_uploaded_file($_FILES["pimg"]["tmp_name"], $target_file);
-        if ($uploadImage){
-            $addProduct = add_product_function($pcat,  $pname, $pprice, $pdesc, $target_file,  $stock);
+    }else {
+        $addProduct = add_product_function($pcat,  $pname, $pprice, $pdesc, $image_src);
             
-            if ($addProduct){
-                 echo "<script type='text/javascript'> 
-                    window.location.href = '../View/view_product.php';
-                    </script>";
-            }else{
-                $addFailed = "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-  Product Addition Failed
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button>
-</div>\n";
-            }
+        if ($addProduct){
+            header("Location: ../view/product.php");
         }else{
-            $imgfail = "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-  Image Failed to Upload
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button>
-</div>\n";
+            header("Location: ../view/product.php");
         }
     }
-
-}
+};
     
 
 ?>
