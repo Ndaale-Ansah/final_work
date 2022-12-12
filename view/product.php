@@ -13,8 +13,11 @@ include_once("../actions/add_product.php");
 <link rel="stylesheet" href="../css/style_login.css">
 <script src="../js/jQuery3.6.js"></script>
 <script src="../js/add_product.js"></script>
+<link href="../css/style.css" rel="stylesheet" />
 </head>
 <body>
+
+
 <?php
 //redirect if user is not an admin
     session_start();
@@ -23,6 +26,7 @@ include_once("../actions/add_product.php");
     }
     ?>
 <!-- partial:index.partial.html -->
+
 <form method="POST" id="form-data" action="../actions/add_product.php"- class="login-form" enctype="multipart/form-data">
   <p class="login-text">
     
@@ -42,7 +46,7 @@ include_once("../actions/add_product.php");
   <textarea rows="4" cols="50" class="login-username" name="prod_desc" id="food_desc" autofocus="true" placeholder="Food Description"></textarea>
   <input type="file" name="prod_img_src" id="image" class="login-username" required="required" accept="image/jpeg, image/png, image/jpg">
   <button type="submit" id="add_prod-button" name="add_prods" class="login-submit"> Add food</button>
-  <button type="button" id="view_prod-button" class="login-submit" > view Food list</button>
+  <button type="button" id="view_prod-button" class="login-submit" > View Food list</button>
 
 </form>
 <a href="../admin/index.php" class="login-forgot-pass">Click to go to home page</a>

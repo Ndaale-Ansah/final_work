@@ -16,6 +16,7 @@ include("../actions/add_category.php");
 
 
 </head>
+
 <body>
 <?php
 //redirect if user is not an admin

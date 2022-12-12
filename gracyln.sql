@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 02:12 AM
+-- Generation Time: Dec 12, 2022 at 04:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,7 +38,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`p_id`, `c_id`, `qty`) VALUES
-(14, 3, 4);
+(14, 8, 5),
+(15, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,6 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`cat_id`, `cat_name`) VALUES
 (4, 'local'),
 (5, 'continental'),
-(6, 'ghanaian'),
 (11, 'German');
 
 -- --------------------------------------------------------
@@ -82,9 +82,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `customer_email`, `contact`, `password`, `user_role`) VALUES
-(2, 'Jesse-Jackson', 'Zigi', 'pascal.kanbonnabah@ashesi.edu.gh', '0508029994', '$2y$10$qg.38iq44h.xdV/n9/k47uICgr5mwCN6/qznVwrtswS6pb1pUtMjm', 0),
-(3, 'Jesse-Jackson', 'Zigi', 'Awonabpascal@gmail.com', '0508029994', '$2y$10$t3AM9szx3a8iacBLdZYF2OwgRv1CNKvlL9k3xnAA6awR.O7WntGVG', 0),
-(4, 'Jesse-Jackson', 'Zigi', 'jesse.zigi@ashesi.edu.gh', '0508029994', '$2y$10$1QhL0yN16m9FdQTRQljWAuj/ILkiArvLJRxaIWfQzA0Y/vEdRkkH.', 1);
+(4, 'Jesse-Jackson', 'Zigi', 'jesse.zigi@ashesi.edu.gh', '0508029994', '$2y$10$1QhL0yN16m9FdQTRQljWAuj/ILkiArvLJRxaIWfQzA0Y/vEdRkkH.', 1),
+(8, 'Jesse-Jackson', 'Zigi', 'Awonabpascal@gmail.com', '0', '$2y$10$PvT/SKY.jNi6LbSvM0Rr6.Pp8IAqIaVD7wCn5Nv0K.XKumtT0YlPi', 0);
 
 -- --------------------------------------------------------
 
@@ -97,6 +96,13 @@ CREATE TABLE `orderdetails` (
   `product_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orderdetails`
+--
+
+INSERT INTO `orderdetails` (`order_id`, `product_id`, `qty`) VALUES
+(1, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -112,6 +118,13 @@ CREATE TABLE `orders` (
   `order_status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `customer_id`, `invoice_no`, `order_date`, `order_status`) VALUES
+(1, 8, 2984, '2022-12-12', 'unfulfilled');
+
 -- --------------------------------------------------------
 
 --
@@ -126,6 +139,13 @@ CREATE TABLE `payment` (
   `currency` text NOT NULL,
   `payment_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`pay_id`, `amt`, `customer_id`, `order_id`, `currency`, `payment_date`) VALUES
+(1, 1, 8, 1, 'GHS', '2022-12-12');
 
 -- --------------------------------------------------------
 
@@ -148,9 +168,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_cat`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES
-(14, 4, 'Jollof rice', 45, 'Jollof rice is a spiced dish, simmered in reduced tomatoes, onions, peppers, and different seasonings depending on where it\'s made. It\'s an iconic dish, with massive regional significance across West Africa and a staple in celebratory social gatherings, including at Lagos parties in Nigeria', 'Jollof-Rice-With-Chicken.jpg', NULL),
-(15, 5, 'Carbonara', 85, 'Carbonara is an Italian pasta dish from Rome made with eggs, hard cheese, cured pork and black pepper. The dish arrived at its modern form, with its current name, in the middle of the 20th century. The cheese is usually Pecorino Romano, Parmigiano-Reggiano, or a combination of the two', 'carbonara.jpg', NULL),
-(16, 5, 'Pizza Margherita', 88, ' A traditional Neapolitan Margherita pizza recipe is tomato sauce with fresh tomatoes, mozzarella cheese and basil which represent the colours of the Italian flag – white cheese, green basil and red tomato', 'pizza_margherita.jpg', NULL);
+(14, 4, 'Jollof rice', 1, 'Jollof rice is a spiced dish, simmered in reduced tomatoes, onions, peppers, and different seasonings depending on where it\'s made. It\'s an iconic dish, with massive regional significance across West Africa and a staple in celebratory social gatherings, including at Lagos parties in Nigeria', 'Jollof-Rice-With-Chicken.jpg', NULL),
+(15, 5, 'Carbonara', 0, 'Carbonara is an Italian pasta dish from Rome made with eggs, hard cheese, cured pork and black pepper. The dish arrived at its modern form, with its current name, in the middle of the 20th century. The cheese is usually Pecorino Romano, Parmigiano-Reggiano, or a combination of the two', 'carbonara.jpg', NULL),
+(16, 5, 'Pizza Margherita', 0, ' A traditional Neapolitan Margherita pizza recipe is tomato sauce with fresh tomatoes, mozzarella cheese and basil which represent the colours of the Italian flag – white cheese, green basil and red tomato', 'pizza_margherita.jpg', NULL);
 
 --
 -- Indexes for dumped tables
@@ -219,19 +239,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `products`
