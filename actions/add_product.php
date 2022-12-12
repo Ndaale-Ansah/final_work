@@ -14,9 +14,8 @@ if (isset($_POST['add_prods'])){
     $pprice = str_replace("'", "\'", $_POST['prod_price']);
     $pcat = str_replace("'","\'", $_POST['prod_cat']);
     $pdesc = str_replace("'","\'", $_POST['prod_desc']); 
-    var_dump($_FILES['prod_img_src']);
     $image_src = uploadImage($_FILES['prod_img_src']);
-    echo $image_src;
+    
     //When image has been uploaded
     if ($image_src == null|| $image_src === 0 || $image_src === 1){
        echo "2";

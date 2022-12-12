@@ -78,11 +78,11 @@ function login_validation(data){
         
     }
     else if(data['response'] ==1){
-        // implement dialog box for incorrec password
+        // TODO: Implement response dialog for success
         console.log("password incorrect");
     }
     else if(data['response'] ==2){
-        // implement dialog box for failed login
+        // TODO: Implement response dialog for failure
         console.log("login failed");
     }
 }

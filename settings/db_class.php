@@ -38,7 +38,7 @@ class Connection{
 
 		// else execute the query
 		$this->results = mysqli_query($this->db, $query);
-
+		
 		// check if results is returning false
 		if($this->results !=true){
 			return false;

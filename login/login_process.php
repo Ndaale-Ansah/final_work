@@ -6,7 +6,7 @@ session_start();
 include_once(dirname(__FILE__)).'/../controllers/customer_controller.php';
 
 
-//check if login button was clicked 
+// Process user login request
 if (isset($_POST['login'])){
 
 	$results_array = array();
@@ -25,9 +25,13 @@ if (isset($_POST['login'])){
 			echo $results_encoded;
 		}
 		else {
+			// setting user permissions
 			$_SESSION["customer_id"] = $login_result["customer_id"];
         	$_SESSION["user_role"] = $login_result["user_role"];
 			$_SESSION["customer_email"] = $login_result["customer_email"];
+
+			// setting response ajax json for success
+			// reference login_validation.js
 			$results_array['response'] = 0;
 			$results_array['user_role'] = $login_result["user_role"];
 
@@ -36,7 +40,10 @@ if (isset($_POST['login'])){
 		}
     }
     else {
+		// setting ajax response json for failure
+		// reference login_validation.js
 		$results_array['response'] = 2;
+
 		$results_encoded = json_encode($results_array);
 		echo $results_encoded;
 	}
