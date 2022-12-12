@@ -17,10 +17,10 @@ class product_class extends Connection{
 	}
 
 	//updating a product in the databse
-    function update_one_product($id,$prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img, $prod_stock){
+    function update_one_product($id, $prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img){
 		return $this->query("update products set product_cat='$prod_cat', 
-		product_title = '$prod_title', product_price = '$prod_price',product_desc = '$prod_desc', product_img = '$prod_img',
-		stock= '$prod_stock' where product_id = '$id'");
+		product_title = '$prod_title', product_price = '$prod_price', product_desc = '$prod_desc', product_image = '$prod_img'
+		where product_id = '$id'");
 	}
 
 	//method to select all products in the database
@@ -31,7 +31,7 @@ class product_class extends Connection{
 	//selecting a  product from the database
 	function return_a_product($id){
 		return $this->fetchOne("select  `categories`.`cat_name`, `categories`.`cat_id`,
-		`products`.`product_title`,`products`.`product_id`, `products`.`product_price`, `products`.`product_desc`, `products`.`product_image`, `products`.`stock`
+		`products`.`product_title`,`products`.`product_id`, `products`.`product_price`, `products`.`product_desc`, `products`.`product_image`
 		 from `products`
 		JOIN categories ON (`products`.`product_cat` = `categories`.`cat_id`)
 		WHERE `products`.`product_id` = '$id'");
@@ -103,7 +103,7 @@ class product_class extends Connection{
 	//method to display all products
 	function display_products(){
     	return $this->fetch("SELECT categories.cat_name as cat_name, products.product_id as prod_id,
-        products.product_title as prod_name, products.product_price as prod_price,
+        products.product_title as prod_name, products.product_price as prod_price, categories.cat_id as cat_id,
 		products.product_desc as prod_desc, products.product_image as prod_img_src
         FROM `products`
         JOIN categories ON (products.product_cat = categories.cat_id)
@@ -117,17 +117,17 @@ class product_class extends Connection{
 
 	//method to view product ID,takes the id and title 
     function view_productsID(){
-        return $this->fetch("SELECT `product_id`, `product_title` FROM `products` WHERE stock > 0");
+        return $this->fetch("SELECT `product_id`, `product_title` FROM `products`");
     }
 
 	//method to view product ID where stock = 0 takes the id and title 
     function viewproducts_nostock(){
-		return $this->fetch("SELECT `product_id`, `product_title` FROM `products` WHERE stock = 0");
+		return $this->fetch("SELECT `product_id`, `product_title` FROM `products` ");
     }
 
 	 //method to display products by categories
     function displaybycat($cat_id){
-        return $this->fetch( "SELECT `categories`.`cat_name`, `categories`.`cat_id`, `products`.`product_title`, `products`.`product_price`, `products`.`product_desc`, `products`.`product_image`, `products`.`stock`, `products`.`product_id`
+        return $this->fetch( "SELECT `categories`.`cat_name`, `categories`.`cat_id`, `products`.`product_title`, `products`.`product_price`, `products`.`product_desc`, `products`.`product_image`, `products`.`product_id`
             FROM `products`
             JOIN `categories` ON (`products`.`product_cat` =`categories`.`cat_id`) 
             WHERE `cat_id` ='$cat_id'");

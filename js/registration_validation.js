@@ -111,11 +111,11 @@ function registration_validation(data){
         window.location.href = '../login/login.php';
     }
     else if(data =="1"){
-        // implement dialog box for insertion failure
+        // TODO: implement dialog box for insertion failure
         console.log("registration failed");
     }
     else if(data =="2"){
-        // implement dialog box for email duplicate in DB
+        // TODO: implement dialog box for email duplicate in DB
         console.log("Email duplication");
     }
 }

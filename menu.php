@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php
+session_start();
+?>
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -166,11 +168,11 @@
       <div class="filters-content">
         <div class="row grid">
           <?php
-          include_once './cart/menu_card.php';
+          include_once './view/menu_card.php';
           $products = display_products_controller();
           foreach($products as $product){
             $img_src = "./images/product_images/{$product['prod_img_src']}";
-            $menu_item = new Card_item($product['prod_id'], $product['prod_name'], $product['prod_price'], $product['prod_desc'], $img_src, $product['cat_name']);
+            $menu_item = new Card_item($product['prod_id'], $product['prod_name'], $product['prod_price'], $product['prod_desc'], $img_src, $product['cat_name'], $product['cat_id']);
             $menu_item->display();
           }
           ?>

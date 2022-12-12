@@ -11,8 +11,20 @@ $(document).ready(function(){
         onNumber("#food_price");
     });
 
+    $("#food_name").click(function(){
+        onInput("#food_name");
+    });
+
+    $("#food_desc").click(function(){
+        onInput("#food_desc");
+    });
+
     $("#food_price").click(function(){
         onNumber("#food_price");
+    });
+
+    $("#view-prod").click(function(){
+        document.location.href = '../Admin/view_products.php';
     });
 
     $("#image").click(function(){
@@ -20,9 +32,6 @@ $(document).ready(function(){
         console.log($(this).val());
     });
    
-    $("#view_prod-button").click(function(){
-        document.location.href = '../Admin/view_products.php';
-    });
 
     // $("#add_prod-button").click(function(){
     //     var name = $("#food_name").val().trim();
@@ -93,25 +102,25 @@ function onInput(input){
     }
 }
 
-function send_data(url, method, data_object, success_function){
-    $.ajax({
-        url: url,
-        method: method,
-        data: data_object,
-        success: function(data){
-            success_function(data);
-        },
-        dataType:"json",
-    }); 
+// function send_data(url, method, data_object, success_function){
+//     $.ajax({
+//         url: url,
+//         method: method,
+//         data: data_object,
+//         success: function(data){
+//             success_function(data);
+//         },
+//         dataType:"json",
+//     }); 
 
-}
+// }
 
-function process_result(data){
-    console.log(data);
-    if(data==0){
-        alert("Successfully added");
-    }
-    else if(data==1){
-        alert("Failed to add");
-    }
-}
+// function process_result(data){
+//     console.log(data);
+//     if(data==0){
+//         alert("Successfully added");
+//     }
+//     else if(data==1){
+//         alert("Failed to add");
+//     }
+// }

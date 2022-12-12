@@ -6,15 +6,19 @@ class Card_item {
     public $item_desc;
     public $item_image_src;
     public $item_category;
+    public $item_cat_id;
+    public $path;
 
 
-    function __construct($p_id, $name, $price, $desc,$img_src, $cat) {
+
+    function __construct($p_id, $name, $price, $desc,$img_src, $cat, $cat_id) {
         $this->product_id = $p_id;
         $this->item_name = $name;
         $this->item_price = $price;
         $this->item_desc = $desc;
         $this->item_image_src = $img_src;
         $this->item_category = $cat;
+        $this->item_cat_id = $cat_id;
     }
   
     function display(){
@@ -36,7 +40,7 @@ class Card_item {
                 <h6>
                   GHS {$this->item_price}
                 </h6>
-                <a href=\"\">
+                <a href=\"./actions/add_cart.php?pid={$this->product_id}&cid={$_SESSION['customer_id']}&qty=1 \">
                   <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 456.029 456.029\" style=\"enable-background:new 0 0 456.029 456.029;\" xml:space=\"preserve\">
                     <g>
                       <g>

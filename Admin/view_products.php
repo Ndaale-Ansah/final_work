@@ -1,11 +1,14 @@
 <?php
-//connect to the add brand process file
-include("../actions/add_category.php");
+require("../Controllers/product_controller.php");
 //redirect if user is not an admin
 session_start();
 if($_SESSION['user_role'] !=1){
     header('location: ../login/login.php');
 }
+
+$ids = view_productsID_controller();
+
+$idsno = viewproducts_nostock_controller();
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +26,7 @@ if($_SESSION['user_role'] !=1){
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="">
 
-  <title> View Categories </title>
+  <title> View Products </title>
 <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
@@ -44,17 +47,6 @@ if($_SESSION['user_role'] !=1){
 <body class="sub_page">
 <div class="food_section layout_padding-bottom">
 
-<!-- <section>
-    <div class='search_input' id='search_input_box' style="font-family: cursive;">
-        <div class='container'>
-            <form class='d-flex justify-content-between search-inner' method="get" action="cat_search_result.php">
-                <input type='text' class='form-control' id='search_input' placeholder='Search Here' name='csterm'>
-                <button type='submit' name="search" class='btn0'>Search</button>
-            </form>
-        </div>
-    </div>
-</section> -->
-
 <section class="Form my-4 mx-5">
       <div class="container">
         <div class="row no-gutters">
@@ -64,30 +56,18 @@ if($_SESSION['user_role'] !=1){
           <div class="col-lg-7 px-5 pt-5">
              
         <?php
-        if(!empty($categoryErrors)){
-          foreach($categoryErrors as $error){
-            echo "\n<div class='alert alert-danger' role='alert' style='padding-bottom: 10px;'>".$error."</div>";
-          }
+        foreach($ids as $id){
+            echo "<li class='list-group-item'>".$id['product_title']." &nbsp;&nbsp;&nbsp; <a class='btn0' href='../actions/update_product.php?id={$id['product_id']}'>Update</a> | <a class='btn0' href='../actions/delete_product.php?id={$id['product_id']}'>Delete</a></li>";
         }
-          
-        if (isset($addSuccess)){
-            echo $addSuccess;
-        }else if(isset($addFailed)){
-            echo $addFailed;
-        }
-          
-        echo "<h3 class='text-center' id='title'>View All Categories</h3>";
-          
-        if (!empty($categories)){
-          foreach($categories as $cat){ 
-            echo "<li class='list-group-item'>". $cat['cat_name'] ." <a class='btn0' href='../Actions/update_category.php?cid={$cat['cat_id']}&cname={$cat['cat_name']}'>Update</a> | <a class='btn0' href='../actions/delete_category.php?cid={$cat['cat_id']}'>Delete</a> </li>";
-          }
-        } 
       ?>
-      <a href="./category.php"><button type="submit" name="addcatbtn" id="addcatbtn">Add Category</button></a>
+        <br>
+            <a href="product.php"><button type="submit" class="btn1 mt-1 mb-1" name="addprodbtn" id="addprodbtn">Add Product</button></a>
+
+
 
         </div>
       </div>
+      
     </section>
 </div>
     <!-- footer section -->
@@ -192,7 +172,8 @@ if($_SESSION['user_role'] !=1){
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"> -->
   <!-- </script> -->
   <!-- End Google Map -->
-
+  <div class="underlay-photo"></div>
+<div class="underlay-black"></div>
 </body>
 
 </html>

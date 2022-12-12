@@ -13,17 +13,15 @@ include_once("../actions/add_product.php");
 <link rel="stylesheet" href="../css/style_login.css">
 <script src="../js/jQuery3.6.js"></script>
 <script src="../js/add_product.js"></script>
-
-
 </head>
 <body>
-<!-- <?php
+<?php
 //redirect if user is not an admin
-    // session_start();
-    // if($_SESSION['user_role'] !=1){
-    //     header('location: ../login/login.php');
-    // }
-    ?> -->
+    session_start();
+    if($_SESSION['user_role'] !=1){
+        header('location: ../login/login.php');
+    }
+    ?>
 <!-- partial:index.partial.html -->
 <form method="POST" id="form-data" action="../actions/add_product.php"- class="login-form" enctype="multipart/form-data">
   <p class="login-text">

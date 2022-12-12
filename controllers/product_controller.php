@@ -13,11 +13,11 @@ function add_product_function($prod_cat, $prod_title, $prod_price, $prod_desc, $
 }
 
 //edit a product function   
-function update_product_controller($id,$prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img, $prod_stock){
+function update_product_controller($id, $prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img){
     // create an instance of the product class
     $product_instance = new product_class();
     // call the method from the class
-    return $product_instance->update_one_product($id,$prod_cat,  $prod_title, $prod_price, $prod_desc, $prod_img, $prod_stock);
+    return $product_instance->update_one_product($id, $prod_cat, $prod_title, $prod_price, $prod_desc, $prod_img);
 }
 
 //delete a product function 

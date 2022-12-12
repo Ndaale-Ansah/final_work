@@ -3,6 +3,10 @@ $(document).ready(function(){
         onInput("#add_category");
     });
 
+    $("#view_cat-button").click(function(){
+        window.location.href = '../Admin/view_category.php';
+    });
+
     $("#add_cat-button").click(function(){
         var category = $("#add_category").val().trim();
         if(validateInput(category)){
@@ -45,9 +49,9 @@ function send_data(url, method, data_object, success_function){
 
 function process_result(data){
     if(data==0){
-        alert("Successfully added");
+        // TODO: implement success dialog for add category
     }
     else if(data==1){
-        alert("Failed to add");
+        // TODO: implement fail dialog for add category
     }
 }
