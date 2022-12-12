@@ -1,4 +1,11 @@
 -- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 12, 2022 at 02:12 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -13,19 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `gracyln`
 --
--- --------------------------------------------------------
---
--- Table structure for table `brands`
---
-
-#drop schema if exists shoppn;
-#create schema shoppn;
-#use schema shoppn;
-
-CREATE TABLE `brands` (
-  `brand_id` int(11) NOT NULL,
-  `brand_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -35,20 +29,37 @@ CREATE TABLE `brands` (
 
 CREATE TABLE `cart` (
   `p_id` int(11) NOT NULL,
-  `ip_add` varchar(50) NOT NULL,
   `c_id` int(11) DEFAULT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `c_id`, `qty`) VALUES
+(14, 3, 4);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `categories`
 --
+
 CREATE TABLE `categories` (
   `cat_id` int(11) NOT NULL,
   `cat_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`cat_id`, `cat_name`) VALUES
+(4, 'local'),
+(5, 'continental'),
+(6, 'ghanaian'),
+(11, 'German');
 
 -- --------------------------------------------------------
 
@@ -62,36 +73,30 @@ CREATE TABLE `customer` (
   `last_name` varchar(100) NOT NULL,
   `customer_email` varchar(50) NOT NULL,
   `contact` varchar(10) NOT NULL,
-  `password` varchar (100) NOT NULL,
-  `user_role` int (11) NOT NULL
-  
+  `password` varchar(100) NOT NULL,
+  `user_role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `customer_email`, `contact`, `password`, `user_role`) VALUES
+(2, 'Jesse-Jackson', 'Zigi', 'pascal.kanbonnabah@ashesi.edu.gh', '0508029994', '$2y$10$qg.38iq44h.xdV/n9/k47uICgr5mwCN6/qznVwrtswS6pb1pUtMjm', 0),
+(3, 'Jesse-Jackson', 'Zigi', 'Awonabpascal@gmail.com', '0508029994', '$2y$10$t3AM9szx3a8iacBLdZYF2OwgRv1CNKvlL9k3xnAA6awR.O7WntGVG', 0),
+(4, 'Jesse-Jackson', 'Zigi', 'jesse.zigi@ashesi.edu.gh', '0508029994', '$2y$10$1QhL0yN16m9FdQTRQljWAuj/ILkiArvLJRxaIWfQzA0Y/vEdRkkH.', 1);
 
 -- --------------------------------------------------------
 
--
--- Table structure for table `archived`
---
-
-CREATE TABLE `archived` (
-  `product_id` int(11) NOT NULL,
-  `product_cat` int(11) NOT NULL,
-  `product_title` varchar(200) NOT NULL,
-  `product_price` double NOT NULL,
-  `product_desc` varchar(500) NOT NULL,
-  `product_image` varchar(100) NOT NULL,
-  `stock` int(11) NOT NULL
-);
 --
 -- Table structure for table `orderdetails`
 --
+
 CREATE TABLE `orderdetails` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 -- --------------------------------------------------------
 
@@ -122,7 +127,6 @@ CREATE TABLE `payment` (
   `payment_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
 -- --------------------------------------------------------
 
 --
@@ -132,18 +136,25 @@ CREATE TABLE `payment` (
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
   `product_cat` int(11) NOT NULL,
-  `product_brand` int(11) NOT NULL,
   `product_title` varchar(200) NOT NULL,
   `product_price` double NOT NULL,
   `product_desc` varchar(500) DEFAULT NULL,
   `product_image` varchar(100) DEFAULT NULL,
   `product_keywords` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Indexes for table `brands`
 --
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`brand_id`);
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_cat`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES
+(14, 4, 'Jollof rice', 45, 'Jollof rice is a spiced dish, simmered in reduced tomatoes, onions, peppers, and different seasonings depending on where it\'s made. It\'s an iconic dish, with massive regional significance across West Africa and a staple in celebratory social gatherings, including at Lagos parties in Nigeria', 'Jollof-Rice-With-Chicken.jpg', NULL),
+(15, 5, 'Carbonara', 85, 'Carbonara is an Italian pasta dish from Rome made with eggs, hard cheese, cured pork and black pepper. The dish arrived at its modern form, with its current name, in the middle of the 20th century. The cheese is usually Pecorino Romano, Parmigiano-Reggiano, or a combination of the two', 'carbonara.jpg', NULL),
+(16, 5, 'Pizza Margherita', 88, ' A traditional Neapolitan Margherita pizza recipe is tomato sauce with fresh tomatoes, mozzarella cheese and basil which represent the colours of the Italian flag – white cheese, green basil and red tomato', 'pizza_margherita.jpg', NULL);
+
+--
+-- Indexes for dumped tables
+--
 
 --
 -- Indexes for table `cart`
@@ -192,30 +203,23 @@ ALTER TABLE `payment`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`),
-  ADD KEY `product_cat` (`product_cat`),
-  ADD KEY `product_brand` (`product_brand`);
+  ADD KEY `product_cat` (`product_cat`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `brands`
---
-ALTER TABLE `brands`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -233,7 +237,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
@@ -270,8 +274,7 @@ ALTER TABLE `payment`
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`product_cat`) REFERENCES `categories` (`cat_id`),
-  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`product_brand`) REFERENCES `brands` (`brand_id`);
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`product_cat`) REFERENCES `categories` (`cat_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
