@@ -65,15 +65,12 @@ session_start();
               <li class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="book.php">Book Table</a>
-              </li>
             </ul>
             <div class="user_option">
               <a href="./login/register.php" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a class="cart_link" href="#">
+              <a class="cart_link" href="./view/cart.php">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -127,11 +124,6 @@ session_start();
                   </g>
                 </svg>
               </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
               <a href="" class="order_online">
                 Order Online
               </a>
@@ -207,13 +199,13 @@ session_start();
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call 0202525920
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  gracyln@gmail.com
                 </span>
               </a>
             </div>
@@ -225,7 +217,6 @@ session_start();
               Gracyln
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
             </p>
             <div class="footer_social">
               <a href="">

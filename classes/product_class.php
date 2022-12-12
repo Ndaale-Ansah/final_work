@@ -155,8 +155,8 @@ class product_class extends Connection{
 
 	//method to view payment
     function view_payments(){
-        return $this->fetch("SELECT `payment`.`amt`, `users`.`user_fname`, `users`.`user_lname`, `orders`.`order_id`, `payment`.`payment_date` FROM `payment` 
-        JOIN `users` ON (`payment`.`user_id` = `users`.`user_id`)
+        return $this->fetch("SELECT `payment`.`amt`, `customer`.`first_name`, `customer`.`last_name`, `orders`.`order_id`, `payment`.`payment_date` FROM `payment` 
+        JOIN `customer` ON (`payment`.`customer_id` = `customer`.`customer_id`)
         JOIN `orders` ON (`payment`.`order_id` = `orders`.`order_id`)");
     }
 	

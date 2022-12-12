@@ -94,7 +94,7 @@ class cart_class extends Connection{
 
     //add orders
     function add_order($c_id, $inv_no, $order_date, $order_status){
-        return $this->query("INSERT INTO `orders`(`user_id`, `invoice_no`, `order_date`, `order_status`) VALUES ('$c_id','$inv_no','$order_date','$order_status')");
+        return $this->query("INSERT INTO `orders`(`customer_id`, `invoice_no`, `order_date`, `order_status`) VALUES ('$c_id','$inv_no','$order_date','$order_status')");
     }
 
     //add order details
@@ -104,7 +104,7 @@ class cart_class extends Connection{
 
     //add payment 
     function add_payment($amt, $c_id, $o_id, $currency, $pay_d){
-        return $this->query("INSERT INTO `payment`(`amt`, `user_id`, `order_id`, `currency`, `payment_date`) VALUES ('$amt','$c_id','$o_id','$currency','$pay_d')");
+        return $this->query("INSERT INTO `payment`(`amt`, `customer_id`, `order_id`, `currency`, `payment_date`) VALUES ('$amt','$c_id','$o_id','$currency','$pay_d')");
     }
 
     //method to get the most recent order
@@ -119,25 +119,25 @@ class cart_class extends Connection{
 
     //get orders
     function get_order($o_id){
-        return $this->fetchOne("SELECT  `users`.`user_fname`, `orders`.`order_id`, `orders`.`invoice_no`, `orders`.`order_date`, `orders`.`order_status` FROM `orders` 
-        JOIN `users` ON (`users`.`user_id` = `orders`.`user_id`) WHERE `orders`.`order_id` = '$o_id'");
+        return $this->fetchOne("SELECT  `customer`.`first_name`, `orders`.`order_id`, `orders`.`invoice_no`, `orders`.`order_date`, `orders`.`order_status` FROM `orders` 
+        JOIN `customer` ON (`customer`.`customer_id` = `orders`.`customer_id`) WHERE `orders`.`order_id` = '$o_id'");
     }
 
     //get order details
     function get_orderDetails($o_id){
-        return $this->fetch("SELECT `products`.`product_title`, `products`.`product_image`, `products`.`product_price`,`products`.`stock`, `orderdetails`.`qty`, `orderdetails`.`qty`*`products`.`product_price` as result FROM `orderdetails` 
+        return $this->fetch("SELECT `products`.`product_title`, `products`.`product_image`, `products`.`product_price`, `orderdetails`.`qty`, `orderdetails`.`qty`*`products`.`product_price` as result FROM `orderdetails` 
         JOIN `products` ON (`orderdetails`.`product_id` = `products`.`product_id`) WHERE `order_id`='$o_id'");
     }
 
     //method to update stock
-    function update_stock($p_id, $stock){
-        return $this->query("UPDATE `products` SET `stock`='$stock' WHERE `product_id`= $p_id");
-    }
+    // function update_stock($p_id, $stock){
+    //     return $this->query("UPDATE `products` SET `stock`='$stock' WHERE `product_id`= $p_id");
+    // }
 
     //method to get stock
-    function get_stock($p_id){
-        return $this->fetchOne("SELECT `stock` FROM `products` WHERE `product_id`='$p_id'");
-    }
+    // function get_stock($p_id){
+    //     return $this->fetchOne("SELECT `stock` FROM `products` WHERE `product_id`='$p_id'");
+    // }
 
 }
 ?>

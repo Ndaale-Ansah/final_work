@@ -54,9 +54,15 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
+            <li class="nav-item">
+           <a class="nav-link" href="./view_category.php">View Category</a>
+         </li>
+              <li class="nav-item ">
                 <a class="nav-link" href="./category.php">Add Category <span class="sr-only">(current)</span></a>
               </li>
+              <li class="nav-item">
+           <a class="nav-link" href="./view_products.php">View Food</a>
+         </li>
               <li class="nav-item">
                 <a class="nav-link" href="../view/product.php">Add food</a>
               </li>
@@ -66,7 +72,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="./view_payment.php">Payments</a>
                 <li class="nav-item">
-                <a class="nav-link" href="logout.php">Logout</a>
+                <a class="nav-link" href="../login/logout.php">Logout</a>
               </li>
             </ul>
                    <g>
@@ -140,10 +146,7 @@
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+            We perceive that a few people are as yet searching for the run-of-the-mill local and continental nourishment, and that is fine with us. Our disclaimer is that on the off chance that you’re anticipating overwhelming, slick, undesirable all-round nourishment,  Gracyln is not  the place for you!!
             </p>
             <a href="">
               Read More

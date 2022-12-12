@@ -107,14 +107,14 @@ function send_data(url, method, data_object, success_function){
 
 function registration_validation(data){
     console.log(data);
-    if(data=="0"){
+    if(data==0){
         window.location.href = '../login/login.php';
     }
-    else if(data =="1"){
+    else if(data ==1){
         // TODO: implement dialog box for insertion failure
         console.log("registration failed");
     }
-    else if(data =="2"){
+    else if(data ==2){
         // TODO: implement dialog box for email duplicate in DB
         console.log("Email duplication");
     }

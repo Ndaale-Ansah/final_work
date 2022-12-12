@@ -1,4 +1,5 @@
 <?php 
+
 class Card_item {
     public $product_id;
     public $item_name;
@@ -22,6 +23,8 @@ class Card_item {
     }
   
     function display(){
+        $path = isset($_SESSION['customer_id']) ? "./actions/add_cart.php?pid={$this->product_id}&cid={$_SESSION['customer_id']}&qty=1 ": "./login/login.php";
+
         echo "<div class=\"col-sm-6 col-lg-4 all {$this->item_category}\">
         <div class=\"box\">
           <div>
@@ -40,7 +43,7 @@ class Card_item {
                 <h6>
                   GHS {$this->item_price}
                 </h6>
-                <a href=\"./actions/add_cart.php?pid={$this->product_id}&cid={$_SESSION['customer_id']}&qty=1 \">
+                <a href=\" {$path} \">
                   <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 456.029 456.029\" style=\"enable-background:new 0 0 456.029 456.029;\" xml:space=\"preserve\">
                     <g>
                       <g>
